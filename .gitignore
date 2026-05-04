@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.env
+bun.lock
+db/
+download/
+upload/
+mini-services/
+.zscripts/
+keep-alive.sh
+start.sh
