@@ -1,7 +1,6 @@
 # Web Aesthetic Showcase
 
-Интерактивный showcase 6 визуальных стилей для веб-проектов. Каждый стиль трансформирует всю страницу — от CRT-терминала до чистого минимализма.
-
+Interactive showcase of 6 visual styles for web projects, each transforming the entire page from a CRT terminal to clean minimalism.
 
 [![Next.js](https://img.shields.io/badge/Next.js-black?style=flat-square)](https://nextjs.org)
 [![React](https://img.shields.io/badge/React-61DAFB?style=flat-square)](https://react.dev)
@@ -10,98 +9,29 @@
 [![Bun](https://img.shields.io/badge/Bun-000000?style=flat-square)](https://bun.sh)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-## Стили
-
-| Стиль | Визуальный язык | Реализованные интерактивные элементы |
-|-------|----------------|--------------------------------------|
-| **Retro Terminal** | Amber CRT · scanlines · boot sequence | 11 команд (`help`, `matrix`, `sysinfo`, `whoami`, `echo`...) |
-| **Brutalist Shell** | Raw borders · high contrast · monospace | 3 таба + рабочий guestbook |
-| **CLI / Command** | Catppuccin Mocha IDE · file explorer | Файловое дерево (5 файлов) · подсветка синтаксиса · mini-terminal |
-| **Sci-Fi HUD** | Cyan holographic · radar · telemetry | 4 live-панели · анимированный радар · system log |
-| **Code Art** | Material Theme · line highlighting | Анимированная подсветка строк · поэтический код |
-| **Clean Modern** | Whitespace · neutral palette · bento grid | Hover-состояния · design tokens · component lab |
-
-
-## Технологии
-
-- **Framework:** Next.js 16 (App Router)
-- **Language:** TypeScript 5
-- **Styling:** Tailwind CSS 4
-- **Components:** shadcn/ui (New York)
-- **Icons:** Lucide React
-- **State:** React hooks (useState, useEffect, useRef, useCallback, useMemo)
-- **ORM:** Prisma (SQLite)
-- **Runtime:** Bun
-
-
-## Установка и запуск
-
-```bash
-## Клонировать репозиторий
-git clone https://github.com/Sts8987/Web-Aesthetic-Showcase.git
-cd Web-Aesthetic-Showcase
-
-## Установить зависимости
-bun install
-
-## Применить схему базы данных
-bun run db:push
-
-## Запустить dev server
-bun run dev
-```
-
-Открыть [http://localhost:3000](http://localhost:3000).
-
-
-## Структура проекта
-
-```css
-src/
-├── app/
-│   ├── page.tsx          ← Весь showcase (6 стилей + hero + switcher)
-│   ├── layout.tsx        ← Metadata · шрифты · глобальная обёртка
-│   └── globals.css       ← Keyframes · scanline · blink анимации
-├── components/ui/        ← shadcn/ui компоненты
-├── hooks/                ← use-mobile · use-toast
-└── lib/
-    ├── db.ts             ← Prisma client
-    └── utils.ts          ← cn() helper
-```
-
-
-## Архитектура
-
-Единая страница (`page.tsx`) содержит 6 полноценных визуальных компонент, переключаемых через стильные pills в sticky header.
-
-Каждый стиль следует **единой структуре контента**:
-
-1. **Header** — название и описание стиля
-2. **Interactive Demo** — работающий интерактивный элемент
-3. **Когда использовать** — 4 сценария применения (аккордеон)
-4. **Ключевые особенности** — 4 свойства стиля (аккордеон)
-
-
-## Лицензия
-
-MIT
-
-
 ## Features
 
-- Feature 1 - description
-- Feature 2 - description
-
+- 6 distinct visual styles: Retro Terminal, Brutalist Shell, CLI/Command, Sci-Fi HUD, Code Art, Clean Modern
+- Retro Terminal style with amber CRT display, scanlines, and 11 terminal commands (help, matrix, sysinfo, whoami, echo)
+- Brutalist Shell style with raw borders, high contrast, 3 tabs, and a working guestbook
+- CLI/Command style with Catppuccin Mocha IDE theme, file tree explorer, syntax highlighting, and mini-terminal
+- Sci-Fi HUD style with cyan holographic panels, animated radar, telemetry, and system log
+- Code Art style with Material Theme, animated line highlighting, and poetic code display
+- Clean Modern style with whitespace, neutral palette, bento grid, hover states, design tokens, and component lab
+- Style switching via pills in a sticky header
+- Unified content structure for each style: header, interactive demo, use cases, and key characteristics
+- Prisma SQLite database for persistent data (guestbook)
 
 ## Tech Stack
 
-- **Framework** - Next.js
-- **Language** - TypeScript
-- **Styling** - Tailwind CSS, CSS
-- **Database** - Prisma, SQLite
-- **Libraries** - shadcn/ui
-- **Tools** - React, Bun
-
+- **Framework** - Next.js 16 (App Router)
+- **Language** - TypeScript 5
+- **Styling** - Tailwind CSS 4
+- **Components** - shadcn/ui (New York)
+- **Icons** - Lucide React
+- **State** - React hooks (useState, useEffect, useRef, useCallback, useMemo)
+- **ORM** - Prisma (SQLite)
+- **Runtime** - Bun
 
 ## Getting Started
 
@@ -115,6 +45,7 @@ MIT
 git clone https://github.com/stsgs1980/web-aesthetic-showcase.git
 cd web-aesthetic-showcase
 bun install
+bun run db:push
 ```
 
 ### Run
@@ -122,6 +53,27 @@ bun install
 ```bash
 bun run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Architecture
+
+A single page (`page.tsx`) contains 6 full visual components switchable via style pills in a sticky header. Each style follows a unified content structure:
+
+- Header with style name and description
+- Interactive demo with a working element
+- Use cases section with 4 scenarios (accordion)
+- Key characteristics section with 4 properties (accordion)
+
+## Project Structure
+
+- `src/app/page.tsx` - Full showcase with 6 styles, hero section, and style switcher
+- `src/app/layout.tsx` - Metadata, fonts, and global wrapper
+- `src/app/globals.css` - Keyframes, scanline, and blink animations
+- `src/components/ui/` - shadcn/ui components
+- `src/hooks/` - use-mobile and use-toast hooks
+- `src/lib/db.ts` - Prisma client
+- `src/lib/utils.ts` - cn() helper
 
 ## License
 
